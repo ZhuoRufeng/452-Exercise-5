@@ -1,0 +1,68 @@
+<!DOCTYPE html>  
+<html lang="en">  
+  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Replace Image on Button Click</title>  
+</head>  
+  
+<body>  
+    <style>  
+        body {  
+            text-align: center;  
+        }  
+  
+        h1 {  
+            background-color: aliceblue;  
+        }  
+  
+        .container {  
+            display: flex;  
+            justify-content: center;  
+            align-items: center;  
+
+        }  
+  
+        .img {  
+            width: 300px; /* Limit the image width to 300px */  
+            height:400px;
+        }  
+  
+        button {  
+            margin: 20px auto;  
+            padding: 10px 20px;  
+            background-color: #4CAF50;  
+            border: none;  
+            color: white;  
+            cursor: pointer;  
+            
+        }  
+    </style>  
+    <h5>I'm Rufeng Zhuo. My English name is Peter.</h5>  
+    <h1>Look at my face</h1>  
+    <div class="container">  
+        <img class="img" src="P1.jpg" alt="P1" id="myImage">  
+    </div>  
+    <button onclick="replaceImage()">Replace</button>  
+  
+    <script>
+     var isClick = false;
+     var beforeImg = "P1.jpg";
+     var afterImg = "P2.jpg"
+        function replaceImage() {  
+            var imageElement = document.getElementById('myImage');  
+            if(isClick){
+                imageElement.src = beforeImg ;
+                isClick = false;
+            }
+            else{
+                imageElement.src = afterImg;
+                isClick = true;
+            }
+        }  
+    </script>  
+  
+</body>  
+  
+</html>
